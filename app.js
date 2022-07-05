@@ -74,7 +74,7 @@ elPagination.addEventListener('click',(e)=>{
     }
 })
 // input search 
-elInput.addEventListener('change',e=>{
+elForm.addEventListener('submit',e=>{
     e.preventDefault();
     filmName=elInput.value.toLowerCase();
     filmPage=1;
@@ -113,7 +113,7 @@ nextBtn.addEventListener('click',()=>{
 })
 // All data
 const fullData=()=>{
-    const request=fetch(`http://www.omdbapi.com/?s=${filmName}&page=${filmPage}&apikey=${API_KEY}`)
+    const request=fetch(`https://www.omdbapi.com/?s=${filmName}&page=${filmPage}&apikey=${API_KEY}`)
     .then(req=>req.json())
     .then(data=>{
         if(data.Response==='True'){

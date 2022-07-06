@@ -77,6 +77,8 @@ elPagination.addEventListener('click',(e)=>{
 elForm.addEventListener('submit',e=>{
     e.preventDefault();
     filmName=elInput.value.toLowerCase();
+    prevBtn.disabled=false;
+    nextBtn.disabled=false;
     filmPage=1;
     fullData();
 })
@@ -87,7 +89,7 @@ elSelect.addEventListener('change',()=>{
 })
 // prev btn
 prevBtn.addEventListener('click',()=>{
-    if(filmPage>0){
+    if(filmPage>1){
         filmPage--;
         fullData();
     }
@@ -100,7 +102,7 @@ prevBtn.addEventListener('click',()=>{
 })
 //next btn
 nextBtn.addEventListener('click',()=>{
-    if(filmPage<=res){
+    if(filmPage<res){
         filmPage++;
         fullData()
     }
